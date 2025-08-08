@@ -1,55 +1,844 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abdul Samad | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaik Abdul Samad | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom styles for black and white theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5; /* Off-White background */
+            color: #1a1a1a; /* Dark Black for text */
+        }
+        .bg-primary { background-color: #1a1a1a; } /* Dark Black for primary sections */
+        .bg-secondary { background-color: #333333; } /* Dark Gray for secondary sections */
+        .bg-accent { background-color: #cccccc; } /* Light Gray for accents */
+        .text-accent { color: #cccccc; } /* Light Gray for accent text */
+        .border-accent { border-color: #cccccc; } /* Light Gray for accent borders */
+        .hover-bg-accent:hover { background-color: #b3b3b3; } /* Slightly darker light gray for hover */
+        .text-light { color: #f5f5f5; } /* Off-White text on dark backgrounds */
+        .text-dark { color: #1a1a1a; } /* Dark Black text on light backgrounds */
+        .text-readable-light { color: #e0e0e0; } /* Slightly darker off-white for better readability on dark backgrounds */
+        
+        /* Smooth transition for all elements */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Add a subtle shadow to cards and buttons for depth */
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn {
+            background-color: #808080; /* Medium Gray for buttons */
+            border-radius: 9999px;   /* Pill shape */
+            color: white;
+            padding: 12px 24px;
+            font-weight: bold;
+            box-shadow: none;
+            border: none;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #666666; /* Darker gray on hover */
+        }
+        
+        /* Ensure AOS animations only run once */
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+
+        /* Flip Card Styles */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 250px;
+            perspective: 1000px; /* For 3D effect */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 0.5rem; /* 8px */
+        }
+
+        /* Flip on hover/focus */
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus .flip-card-inner,
+        .flip-card:focus-within .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 0.5rem; /* 8px */
+        }
+
+        .flip-card-front {
+            background-color: #333333; /* bg-secondary */
+            color: #f5f5f5; /* text-light */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem; /* p-6 */
+        }
+
+        .flip-card-back {
+            background-color: #f5f5f5; /* body background */
+            color: #1a1a1a; /* text-dark */
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        /* Education Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 100%;
+            width: 4px;
+            background: #333333; /* bg-secondary */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            padding: 1rem 0;
+            padding-left: 3rem;
+            position: relative;
+        }
+        .timeline-item::before { /* The circle on the timeline */
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 28px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            border: 4px solid #cccccc; /* border-accent */
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .timeline-container::before {
+                left: 50%;
+                margin-left: -2px;
+            }
+            .timeline-item {
+                width: 50%;
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+            .timeline-item:nth-child(odd) {
+                padding-left: 0;
+                left: 0;
+                text-align: right;
+            }
+            .timeline-item:nth-child(even) {
+                padding-right: 0;
+                left: 50%;
+            }
+            .timeline-item:nth-child(odd)::before {
+                left: auto;
+                right: -10px;
+            }
+            .timeline-item:nth-child(even)::before {
+                left: -10px;
+            }
+        }
+        
+        /* Contact Form Styles */
+        .form-input-light {
+            @apply w-full p-3 rounded-lg bg-gray-200/50 text-dark border-2 border-dark/20 focus:border-accent focus:ring-2 focus:ring-accent/50 outline-none placeholder-gray-500;
+        }
+
+        /* Card Styles for Coursework and Skills */
+        .section-card {
+            background-color: #333333; /* bg-secondary */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: #f5f5f5; /* text-light */
+            height: 100%; /* Ensure cards in a row have same height */
+            display: flex;
+            flex-direction: column;
+        }
+        .section-card h3 {
+            font-weight: 600; /* Semi-bold */
+            font-size: 1.25rem; /* text-xl */
+            margin-bottom: 1rem;
+            color: #cccccc; /* text-accent */
+        }
+        .section-card ul {
+            list-style: disc;
+            list-style-position: inside;
+            padding-left: 0.5rem; /* Slight indent for list items */
+            flex-grow: 1; /* Allows the list to take up available space */
+        }
+        .section-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            color: #e0e0e0; /* text-readable-light */
+        }
+
+    </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Abdul Samad</h1>
-      <p>AI/ML Enthusiast</p>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header-container" class="fixed top-0 md:top-4 inset-x-0 md:inset-x-4 z-50">
+        <div id="header" class="bg-secondary/95 backdrop-blur-lg shadow-xl md:rounded-2xl border-b md:border border-light/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-center py-4">
+                    <a href="#hero" class="text-xl font-bold text-light">Shaik Abdul Samad</a>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#about" class="text-light hover:text-accent">About</a>
+                        <a href="#skills" class="text-light hover:text-accent">Skills</a>
+                        <a href="#experience" class="text-light hover:text-accent">Experience</a>
+                        <a href="#academic-responsibilities" class="text-light hover:text-accent">Academic Responsibilities</a>
+                        <a href="#education" class="text-light hover:text-accent">Education</a>
+                        <a href="#coursework" class="text-light hover:text-accent">Coursework</a>
+                        <a href="#projects" class="text-light hover:text-accent">Projects</a>
+                        <a href="#certifications" class="text-light hover:text-accent">Certifications</a>
+                        <a href="#contact" class="text-light hover:text-accent">Contact</a>
+                    </nav>
+                    <button id="mobile-menu-button" class="md:hidden text-light focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="border-t border-light/20"></div>
+                <a href="#about" class="block text-light text-center py-3 px-4 hover:bg-accent/50">About</a>
+                <a href="#skills" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Skills</a>
+                <a href="#experience" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Experience</a>
+                <a href="#academic-responsibilities" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Academic Responsibilities</a>
+                <a href="#education" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Education</a>
+                <a href="#coursework" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Coursework</a>
+                <a href="#projects" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Projects</a>
+                <a href="#certifications" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Certifications</a>
+                <a href="#contact" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Contact</a>
+            </div>
+        </div>
     </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am passionate about solving real-world problems using technology. I love working with AI/ML models, building web applications, and diving deep into embedded systems.</p>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-primary">
+            <div class="container mx-auto px-6 text-center">
+                <h1 data-aos="fade-down" class="text-4xl md:text-6xl font-bold text-light mb-4">Shaik Abdul Samad</h1>
+                <p data-aos="fade-down" data-aos-delay="200" class="text-xl md:text-2xl text-accent mb-8">MTech. Electrical Engineering | Machine Learning & Deep Learning Enthusiast</p>
+                <p data-aos="fade-up" data-aos-delay="400" class="max-w-3xl mx-auto text-readable-light mb-12">
+                    A passionate and driven MTech student specializing in Communications, Signal Processing, and Machine Learning. With a strong foundation in AI/ML, computer vision, and natural language processing, I am dedicated to building innovative solutions and contributing to cutting-edge research.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="assets/pdf/Resume.pdf" download class="btn" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, C</li>
-        <li>TensorFlow, PyTorch, Scikit-learn</li>
-        <li> Generative AI, RAGs, Agentic AI</li>
-        <li>MATLAB, Embedded C</li>
-      </ul>
-    </section>
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 text-center" data-aos="fade-right">
+                        <!-- Placeholder for profile image -->
+                        <img src="assets/img/profile.jpg" alt="Shaik Abdul Samad Portrait" class="rounded-full w-64 h-64 mx-auto card-shadow object-cover">
+                    </div>
+                    <div class="md:w-2/3" data-aos="fade-left">
+                        <p class="text-lg mb-4">
+                           I am a Master's student at IIT Dharwad, specializing in Machine Learning, Deep Learning, and Signal Processing. My academic journey has equipped me with strong theoretical knowledge and practical skills in developing AI-driven solutions.
+                        </p>
+                        <p class="text-lg mb-4">
+                           My experience includes working as a Trainee Engineer at Infobellit (Client: AMD), where I built RAG-based systems, and as a Technical Intern at Siemens, focusing on Federated Learning and Computer Vision Foundation Models. I also have experience as a Freelancer in training LLMs through RLHF and prompt evaluation.
+                        </p>
+                        <p class="text-lg mb-4">
+                           I have a keen interest in Generative AI, RAG, and Reinforcement Learning, constantly exploring new advancements in these fields. My projects demonstrate my ability to apply complex AI concepts to real-world problems, from cervical cancer detection to smart fatigue relief systems.
+                        </p>
+                         <p class="text-lg">
+                           I am passionate about leveraging technology to create impactful solutions and am always eager to collaborate on challenging and innovative projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Federated Learning Dashboard</strong> – <a href="https://github.com/yourusername/fedlearn-dashboard" target="_blank">GitHub</a></li>
-        <li><strong>4-Layer Neural Network from Scratch</strong> – <a href="https://github.com/yourusername/nn-from-scratch" target="_blank">GitHub</a></li>
-        <li><strong>MRF-DCN for Cervical Cell Classification</strong> – <a href="https://github.com/yourusername/mrf-dcn" target="_blank">GitHub</a></li>
-      </ul>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32 bg-secondary">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light mb-12">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Programming Languages -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C</li>
+                        </ul>
+                    </div>
+                    <!-- Technologies -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Technologies</h3>
+                        <ul>
+                            <li>Machine Learning</li>
+                            <li>Deep Learning</li>
+                            <li>Speech Signal Processing</li>
+                            <li>Embedded Systems</li>
+                        </ul>
+                    </div>
+                    <!-- Concepts -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Concepts</h3>
+                        <ul>
+                            <li>Federated Learning</li>
+                            <li>LLM Finetuning</li>
+                            <li>Quantization</li>
+                            <li>Pruning</li>
+                            <li>Knowledge Distillation</li>
+                        </ul>
+                    </div>
+                    <!-- ML/AI Frameworks -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="400">
+                        <h3>ML/AI Frameworks</h3>
+                        <ul>
+                            <li>PyTorch</li>
+                            <li>TensorFlow</li>
+                            <li>Keras</li>
+                            <li>Scikit-learn</li>
+                            <li>NumPy</li>
+                        </ul>
+                    </div>
+                    <!-- GenAI Frameworks -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="500">
+                        <h3>GenAI Frameworks</h3>
+                        <ul>
+                            <li>LangChain</li>
+                            <li>LangGraph</li>
+                            <li>LangSmith</li>
+                            <li>MCP</li>
+                        </ul>
+                    </div>
+                    <!-- Miscellaneous -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="600">
+                        <h3>Miscellaneous</h3>
+                        <ul>
+                            <li>Version Control: Git & GitHub</li>
+                            <li>Flask</li>
+                            <li>Streamlit</li>
+                            <li>Shell Scripting</li>
+                            <li>Python GUI Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:abdulsamadshaik183@gmail.com">abdulsamadshaik183@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/abdulsamad183" target="_blank">abdulsamad183</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/shaikabdulsamadiit-9" target="_blank">shaikabdulsamadiit-9</a></p>
-    </section>
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 md:py-32 bg-primary">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light mb-12">Experience</h2>
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-left">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-light">Trainee Engineer (Intern)</h3>
+                                <p class="text-accent font-semibold">Infobellit (Client: AMD)</p>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">June 2025 - Present</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-readable-light space-y-2">
+                            <li>Building RAG based system to retrieve benchmark datasets from AMD.</li>
+                            <li>Skills: Agentic AI, RAG, MongoDB.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-right">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-light">Technical Intern</h3>
+                                <p class="text-accent font-semibold">Siemens</p>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Nov 2024 - May 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-readable-light space-y-2">
+                            <li>Exploration of Federated Learning for Domain Adaptation, Computer Vision & Time Series Foundation Models.</li>
+                            <li>Experimenting different methods to improve model performance with FL approach.</li>
+                            <li>Distributed and Parallel Computing.</li>
+                            <li>Collaborated with a diverse team during Siemens GenAI Hackathon.</li>
+                            <li>Skills: AI/ML, Federated Learning, PyTorch, Docker, Langchain.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-left">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-light">Freelancer</h3>
+                                <p class="text-accent font-semibold">Training LLMs through RLHF, Prompt Evaluation</p>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Aug 2024 - Present</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-readable-light space-y-2">
+                            <li>Engaged in training Large Language Models using Reinforcement Learning from Human Feedback (RLHF).</li>
+                            <li>Conducted prompt evaluation to refine and optimize LLM responses.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-      <p>&copy; 2025 Abdul Samad</p>
+        <!-- Academic Responsibilities Section -->
+        <section id="academic-responsibilities" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Academic Responsibilities</h2>
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-left">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Teaching Assistant | Embedded Systems Design Lab</h3>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">August 2024 - Nov 2024</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-dark/80 space-y-2">
+                            <li>Currently mentoring 50+ students, guiding them in coding for the <strong>Tiva TM4C123GH6PM microcontroller</strong>.</li>
+                            <li>Assisting students with coding challenges, actively clarifying concepts, and addressing technical doubts.</li>
+                            <li>Continuously evaluating lab assignments to monitor and support students' progress in microcontroller programming.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-right">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Teaching Assistant | Introduction to Communication Systems</h3>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Jan 2024 - April 2024</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-dark/80 space-y-2">
+                            <li>Mentored 50+ undergraduate students to help build their skills in <strong>Communication Systems</strong> by guiding them in using <strong>MATLAB</strong>.</li>
+                            <li>Assisted in conducting lab sessions and provided support to conduct examinations and helped the academically weaker students by solving their doubts and clearing key concepts related to the subject.</li>
+                            <li>Evaluated assignments and conducted simulations of various modulation and demodulation techniques (AM, PM, FM, BPSK, QPSK, etc.) in <strong>MATLAB</strong> prior to lab sessions.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-left">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Robotics Club Co-Ordinator | IIIT, RGUKT, RK Valley</h3>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Jan 2022 - April 2023</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-dark/80 space-y-2">
+                            <li>Coordinated and Managed activities for the college Robotics Club, fostering innovation and teamwork among members.</li>
+                            <li>Led and mentored junior Students on multiple projects, guiding them through the development and implementation stages.</li>
+                            <li>Conducted comprehensive teaching sessions on <strong>Arduino, NodeMCU, and Machine Learning</strong> enhancing technical skills within the club.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-right">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Workshop Organizer | Astronics 4.0 - IIIT, RGUKT, RK Valley</h3>
+                            </div>
+                            <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">April 2023</span>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 text-dark/80 space-y-2">
+                            <li>Taught programming concepts, enhancing participants' technical skills during the workshop.</li>
+                            <li>Assisted students with hands-on experiments, fostering a practical understanding of the workshop material.</li>
+                            <li>Organized and managed the entire <strong>Astronics-4.0</strong> workshop, ensuring smooth execution of all activities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Education</h2>
+                <div class="timeline-container max-w-3xl mx-auto">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="bg-white p-6 rounded-lg card-shadow">
+                            <p class="text-accent font-semibold mb-1">2023-2025</p>
+                            <h3 class="text-xl font-bold text-dark">MTech., Electrical Engineering</h3>
+                            <p class="text-dark/80">Indian Institute of Technology Dharwad (IIT DH)</p>
+                            <p class="text-dark/70">Communications, Signal Processing and Machine Learning | CGPA: 8.96/10</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="bg-white p-6 rounded-lg card-shadow">
+                            <p class="text-accent font-semibold mb-1">2019-2023</p>
+                            <h3 class="text-xl font-bold text-dark">B.Tech., Electronics and Communication Engineering</h3>
+                            <p class="text-dark/80">IIIT RGUKT RK Valley</p>
+                            <p class="text-dark/70">CGPA: 8.75/10</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="bg-white p-6 rounded-lg card-shadow">
+                            <p class="text-accent font-semibold mb-1">2017-2019</p>
+                            <h3 class="text-xl font-bold text-dark">PUC (Pre-University Course)</h3>
+                            <p class="text-dark/80">IIIT RGUKT RK Valley</p>
+                            <p class="text-dark/70">CGPA: 8.87/10</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="bg-white p-6 rounded-lg card-shadow">
+                            <p class="text-accent font-semibold mb-1">2016-2017</p>
+                            <h3 class="text-xl font-bold text-dark">SSC (Secondary School Certificate)</h3>
+                            <p class="text-dark/80">AP Model School</p>
+                            <p class="text-dark/70">GPA: 10.0/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coursework Section -->
+        <section id="coursework" class="py-20 md:py-32 bg-primary">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light mb-12">Relevant Coursework</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Machine Learning & Deep Learning -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Machine Learning & Deep Learning</h3>
+                        <ul>
+                            <li>Neural Networks and Deep Learning</li>
+                            <li>Neural Networks and Deep Learning Laboratory</li>
+                            <li>Natural Language Processing</li>
+                            <li>Pattern Recognition and Machine Learning</li>
+                            <li>Pattern Recognition and Machine Learning Laboratory</li>
+                        </ul>
+                    </div>
+                    <!-- Systems & Communications -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Systems & Communications</h3>
+                        <ul>
+                            <li>Embedded Systems Design</li>
+                            <li>Embedded Systems Laboratory</li>
+                            <li>Wireless Communications</li>
+                        </ul>
+                    </div>
+                    <!-- Mathematics & Algorithms -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Mathematics & Algorithms</h3>
+                        <ul>
+                            <li>Linear Algebra and its Applications</li>
+                            <li>Probability Models and Applications</li>
+                            <li>Optimization Theory and Algorithms</li>
+                        </ul>
+                    </div>
+                    <!-- Programming & Others (if any remaining) -->
+                    <div class="section-card" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Programming & Core Concepts</h3>
+                        <ul>
+                            <li>Computational Science Using Python</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32 bg-secondary">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light mb-12">Projects</h2>
+                <div class="flex justify-center">
+                    <!-- Changed from md:grid-cols-2 to lg:grid-cols-3 for 3 cards in one line on large screens -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
+                        <!-- Project Card 1: Master's Thesis -->
+                        <div class="bg-white rounded-lg overflow-hidden card-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://placehold.co/600x400/1a1a1a/cccccc?text=Cervical+Cancer+Detection" alt="Cervical Cancer Detection Project" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-dark">Master's Thesis: Cervical Cancer Detection</h3>
+                                <ul class="list-disc list-inside text-dark/80 mb-4 text-sm space-y-1">
+                                    <li>Implemented Various DL Models for segmentation and classification tasks.</li>
+                                    <li>Designed a novel DL architecture (MRF-DCN) achieving ~96% classification accuracy with fewer parameters.</li>
+                                    <li>Developed an integrated Pipeline for segmentation, classification, and probabilistic risk assessment to improve early detection.</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Deep Learning</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Computer Vision</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Medical Imaging</span>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <a href="https://arxiv.org/abs/2505.15505" target="_blank" class="font-semibold text-accent hover:underline flex items-center gap-1"><i data-lucide="link" class="w-4 h-4"></i> Publication</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Card 2: DistilBERT Implementation -->
+                        <div class="bg-white rounded-lg overflow-hidden card-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://placehold.co/600x400/333333/f5f5f5?text=DistilBERT" alt="DistilBERT Project" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-dark">Implementation of DistilBERT</h3>
+                                <ul class="list-disc list-inside text-dark/80 mb-4 text-sm space-y-1">
+                                    <li>Replicated research paper on DistilBERT, a smaller, faster, and lighter version of BERT.</li>
+                                    <li>Trained BERT model on 'Recognizing Textual Entailment (RTE)' dataset, achieving a score of 64.98.</li>
+                                    <li>Implemented DistilBERT and CustominLawBERT for "Rhetorical Role Prediction Dataset".</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">NLP</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Deep Learning</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">BERT</span>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/abdulsamad183" target="_blank" class="font-semibold text-accent hover:underline flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Card 3: Smart Fatigue Relieve System -->
+                        <div class="bg-white rounded-lg overflow-hidden card-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                            <img src="https://placehold.co/600x400/1a1a1a/cccccc?text=Fatigue+Relief" alt="Smart Fatigue Relieve System Project" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-dark">Bachelor Thesis: Smart Fatigue Relieve System</h3>
+                                <ul class="list-disc list-inside text-dark/80 mb-4 text-sm space-y-1">
+                                    <li>Designed a system integrating computer vision (YOLOv3) to capture facial status for fatigue detection.</li>
+                                    <li>Utilized Arduino for controlling Fan/AC, playing relaxing music, and deploying a small robot for water delivery.</li>
+                                    <li>Collected and preprocessed facial expression data from 400 university students for model training.</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Computer Vision</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">Robotics</span>
+                                    <span class="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded-full">IoT</span>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/abdulsamad183" target="_blank" class="font-semibold text-accent hover:underline flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Machine Learning A-Z -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Machine Learning A-Z™: Hands-On Python in Data Science</h3>
+                                <p class="font-semibold text-light/80">Udemy</p>
+                                <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://placehold.co/600x400/f5f5f5/1a1a1a?text=ML+Certificate" alt="Machine Learning A-Z Certificate" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f5f5/1a1a1a?text=Image+Not+Found';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Deep Learning A-Z -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Deep Learning A-Z™: Hands-On Artificial Neural Networks</h3>
+                                <p class="font-semibold text-light/80">Udemy</p>
+                                <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://placehold.co/600x400/f5f5f5/1a1a1a?text=DL+Certificate" alt="Deep Learning A-Z Certificate" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f5f5/1a1a1a?text=Image+Not+Found';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Neural Networks and Deep Learning -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="300" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Neural Networks and Deep Learning</h3>
+                                <p class="font-semibold text-light/80">Coursera by deeplearning.ai</p>
+                                <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://placehold.co/600x400/f5f5f5/1a1a1a?text=NN+DL+Certificate" alt="Neural Networks and Deep Learning Certificate" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f5f5/1a1a1a?text=Image+Not+Found';">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="text-center mb-12">
+                     <p class="text-sm font-semibold uppercase text-accent tracking-widest">Contact</p>
+                     <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">I'd love to hear from you</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-12">
+                    <div class="flex flex-col gap-8">
+                        <div class="flex items-start p-6 bg-white rounded-lg card-shadow border" data-aos="fade-right">
+                            <div class="p-3 rounded-full bg-accent/20 mr-4">
+                                <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-dark">Email</h3>
+                                <a href="mailto:abdulsamadshaik183@gmail.com" class="text-dark/80 hover:text-accent">abdulsamadshaik183@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-white rounded-lg card-shadow border" data-aos="fade-right" data-aos-delay="100">
+                            <div class="p-3 rounded-full bg-accent/20 mr-4">
+                                <i data-lucide="github" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-dark">GitHub</h3>
+                                <a href="https://github.com/abdulsamad183" target="_blank" class="text-dark/80 hover:text-accent">github.com/abdulsamad183</a>
+                            </div>
+                        </div>
+                         <div class="flex items-start p-6 bg-white rounded-lg card-shadow border" data-aos="fade-right" data-aos-delay="200">
+                            <div class="p-3 rounded-full bg-accent/20 mr-4">
+                                <i data-lucide="linkedin" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-dark">LinkedIn</h3>
+                                <a href="https://linkedin.com/in/shaikabdulsamad-iit9/" target="_blank" class="text-dark/80 hover:text-accent">linkedin.com/in/shaikabdulsamad-iit9/</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg card-shadow border" data-aos="fade-left">
+                        <form id="contact-form" class="space-y-4">
+                             <div>
+                                <label for="name" class="block text-dark/80 mb-1 font-semibold">Name</label>
+                                <input type="text" id="name" name="name" required class="form-input-light" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-dark/80 mb-1 font-semibold">Email</label>
+                                <input type="email" id="email" name="email" required class="form-input-light" placeholder="Your Email">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-dark/80 mb-1 font-semibold">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="form-input-light" placeholder="What's this about?">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-dark/80 mb-1 font-semibold">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input-light" placeholder="Tell me more..."></textarea>
+                            </div>
+                            <div class="text-right pt-2">
+                                <button type="submit" class="btn rounded-full">Send Message</button>
+                            </div>
+                        </form>
+                         <div id="success-message" class="hidden mt-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800">
+                            <p class="font-semibold">Thank you for your message!</p>
+                            <p>I'll be in touch soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-6">
+        <div class="container mx-auto px-6 text-center text-readable-light/80">
+            <p>&copy; 2025 Shaik Abdul Samad. Designed with care.</p>
+        </div>
     </footer>
-  </div>
+
+    <!-- AOS and Lucide Icons Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll) library
+        AOS.init({
+            duration: 800, // Animation duration in milliseconds
+            once: true, // Whether animation should happen only once - while scrolling down
+        });
+
+        // Initialize Lucide Icons to replace data-lucide attributes with SVG icons
+        lucide.createIcons();
+
+        // JavaScript for mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a, #header nav a');
+
+        // Toggle the visibility of the mobile menu when the button is clicked
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a navigation link is clicked (for both desktop and mobile menus)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Check if the mobile menu is visible before trying to hide it
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Handle Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission to handle it with JavaScript
+            
+            // In a real application, you would send this data to a server (e.g., Google App Script, backend API)
+            // For now, we'll just log the data and show a success message.
+            
+            const formData = new FormData(contactForm);
+            // Extract form data into a JavaScript object
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+            };
+            console.log('Form data:', data); // Log the form data to the browser console for debugging
+
+            // Simulate form submission success: hide the form and show the success message
+            contactForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+        });
+
+    </script>
 </body>
 </html>
-
-
-
