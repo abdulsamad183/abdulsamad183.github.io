@@ -218,6 +218,13 @@
             color: #e0e0e0; /* text-readable-light */
         }
 
+        /* Specific logo/icon sizing for consistency */
+        .logo-icon {
+            width: 24px; /* Adjust as needed */
+            height: 24px; /* Adjust as needed */
+            margin-right: 8px; /* Space between logo and text */
+            object-fit: contain; /* Ensures image scales without cropping */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -226,8 +233,9 @@
     <header id="header-container" class="fixed top-0 md:top-4 inset-x-0 md:inset-x-4 z-50">
         <div id="header" class="bg-secondary/95 backdrop-blur-lg shadow-xl md:rounded-2xl border-b md:border border-light/10">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex justify-between items-center py-4">
-                    <a href="#hero" class="text-xl font-bold text-light">Shaik Abdul Samad</a>
+                <div class="flex justify-between items-center py-5"> <!-- Changed py-4 to py-5 -->
+                    <!-- Removed the "Portfolio" link here -->
+                    <a href="#hero" class="text-xl font-bold text-light"></a> 
                     <nav class="hidden md:flex space-x-8">
                         <a href="#about" class="text-light hover:text-accent">About</a>
                         <a href="#skills" class="text-light hover:text-accent">Skills</a>
@@ -236,7 +244,9 @@
                         <a href="#education" class="text-light hover:text-accent">Education</a>
                         <a href="#coursework" class="text-light hover:text-accent">Coursework</a>
                         <a href="#projects" class="text-light hover:text-accent">Projects</a>
+                        <a href="#publications" class="text-light hover:text-accent">Publications</a>
                         <a href="#certifications" class="text-light hover:text-accent">Certifications</a>
+                        <a href="#resume-section" class="text-light hover:text-accent">Resume</a> <!-- Added Resume link -->
                         <a href="#contact" class="text-light hover:text-accent">Contact</a>
                     </nav>
                     <button id="mobile-menu-button" class="md:hidden text-light focus:outline-none">
@@ -254,7 +264,9 @@
                 <a href="#education" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Education</a>
                 <a href="#coursework" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Coursework</a>
                 <a href="#projects" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Projects</a>
+                <a href="#publications" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Publications</a>
                 <a href="#certifications" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Certifications</a>
+                <a href="#resume-section" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Resume</a> <!-- Added Resume link -->
                 <a href="#contact" class="block text-light text-center py-3 px-4 hover:bg-accent/50">Contact</a>
             </div>
         </div>
@@ -262,18 +274,30 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center bg-primary">
+        <section id="hero" class="min-h-screen flex items-center bg-primary pt-20"> <!-- Added pt-20 here -->
             <div class="container mx-auto px-6 text-center">
                 <h1 data-aos="fade-down" class="text-4xl md:text-6xl font-bold text-light mb-4">Shaik Abdul Samad</h1>
-                <p data-aos="fade-down" data-aos-delay="200" class="text-xl md:text-2xl text-accent mb-8">MTech. Electrical Engineering | Machine Learning & Deep Learning Enthusiast</p>
-                <p data-aos="fade-up" data-aos-delay="400" class="max-w-3xl mx-auto text-readable-light mb-12">
-                    A passionate and driven MTech student specializing in Communications, Signal Processing, and Machine Learning. With a strong foundation in AI/ML, computer vision, and natural language processing, I am dedicated to building innovative solutions and contributing to cutting-edge research.
-                </p>
+                <p data-aos="fade-down" data-aos-delay="200" class="text-xl md:text-2xl text-accent mb-8">A postgraduate student in Communications, Signal Processing and Machine Learning. I work on AI/ML, Deep Learning, Generative AI, RAG systems, and AI Agents — from building neural networks from scratch to deploying real-time AI solutions with dashboards. I also explore federated learning, cloud technologies.</p>
                 <div class="flex flex-wrap justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="600">
                     <a href="#projects" class="btn">View My Work</a>
                     <a href="assets/pdf/Resume.pdf" download class="btn" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
                         <i data-lucide="download" class="w-5 h-5"></i>
                         <span>Download Resume</span>
+                    </a>
+                </div>
+                <!-- New Social/Contact Links in Hero Section -->
+                <div class="flex flex-wrap justify-center items-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="700">
+                    <a href="mailto:abdulsamadshaik183@gmail.com" class="text-light hover:text-accent flex items-center gap-2 text-lg">
+                        <i data-lucide="mail" class="w-6 h-6"></i> Mail
+                    </a>
+                    <a href="https://linkedin.com/in/shaikabdulsamad-iit9/" target="_blank" class="text-light hover:text-accent flex items-center gap-2 text-lg">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/abdulsamad183" target="_blank" class="text-light hover:text-accent flex items-center gap-2 text-lg">
+                        <i data-lucide="github" class="w-6 h-6"></i> GitHub
+                    </a>
+                    <a href="https://leetcode.com/u/abdulsamadshaik183/" target="_blank" class="text-light hover:text-accent flex items-center gap-2 text-lg">
+                        <i data-lucide="codesandbox" class="w-6 h-6"></i> LeetCode
                     </a>
                 </div>
             </div>
@@ -285,8 +309,8 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/3 text-center" data-aos="fade-right">
-                        <!-- Placeholder for profile image -->
-                        <img src="assets/img/profile.jpg" alt="Shaik Abdul Samad Portrait" class="rounded-full w-64 h-64 mx-auto card-shadow object-cover">
+                        <!-- Profile image updated -->
+                        <img src="assets/img/profile.jpg" alt="Shaik Abdul Samad Portrait" class="rounded-full w-64 h-64 mx-auto card-shadow object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/f5f5f5?text=Profile';">
                     </div>
                     <div class="md:w-2/3" data-aos="fade-left">
                         <p class="text-lg mb-4">
@@ -296,7 +320,7 @@
                            My experience includes working as a Trainee Engineer at Infobellit (Client: AMD), where I built RAG-based systems, and as a Technical Intern at Siemens, focusing on Federated Learning and Computer Vision Foundation Models. I also have experience as a Freelancer in training LLMs through RLHF and prompt evaluation.
                         </p>
                         <p class="text-lg mb-4">
-                           I have a keen interest in Generative AI, RAG, and Reinforcement Learning, constantly exploring new advancements in these fields. My projects demonstrate my ability to apply complex AI concepts to real-world problems, from cervical cancer detection to smart fatigue relief systems.
+                           I have a keen interest in Generative AI, RAG, and Reinforcement Learning, constantly exploring new advancements in these fields. My projects demonstrate my ability to apply complex AI concepts to real-world problems.
                         </p>
                          <p class="text-lg">
                            I am passionate about leveraging technology to create impactful solutions and am always eager to collaborate on challenging and innovative projects.
@@ -317,6 +341,7 @@
                         <ul>
                             <li>Python</li>
                             <li>C</li>
+                            <li>MATLAB</li>
                         </ul>
                     </div>
                     <!-- Technologies -->
@@ -325,16 +350,23 @@
                         <ul>
                             <li>Machine Learning</li>
                             <li>Deep Learning</li>
+                            <li>Image Processing</li>
                             <li>Speech Signal Processing</li>
-                            <li>Embedded Systems</li>
+                            <li>Federated Learning</li>
+                            <li>Natural Language Processing</li>
+                            <li>Generative AI</li>
+                            <li>Agentic AI</li>
+                            <li>MCP</li>
                         </ul>
                     </div>
-                    <!-- Concepts -->
+                    <!-- Generative AI -->
                     <div class="section-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Concepts</h3>
+                        <h3>Generative AI</h3>
                         <ul>
-                            <li>Federated Learning</li>
                             <li>LLM Finetuning</li>
+                            <li>LLM Applications</li>
+                            <li>RAGs</li>
+                            <li>Chatbots</li>
                             <li>Quantization</li>
                             <li>Pruning</li>
                             <li>Knowledge Distillation</li>
@@ -355,10 +387,9 @@
                     <div class="section-card" data-aos="fade-up" data-aos-delay="500">
                         <h3>GenAI Frameworks</h3>
                         <ul>
+                            <li>Huggingface</li>
                             <li>LangChain</li>
                             <li>LangGraph</li>
-                            <li>LangSmith</li>
-                            <li>MCP</li>
                         </ul>
                     </div>
                     <!-- Miscellaneous -->
@@ -366,9 +397,9 @@
                         <h3>Miscellaneous</h3>
                         <ul>
                             <li>Version Control: Git & GitHub</li>
-                            <li>Flask</li>
-                            <li>Streamlit</li>
                             <li>Shell Scripting</li>
+                            <li>Streamlit</li>
+                            <li>Flask</li>
                             <li>Python GUI Development</li>
                         </ul>
                     </div>
@@ -382,10 +413,13 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-light mb-12">Experience</h2>
                 <div class="max-w-3xl mx-auto space-y-8">
                     <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-left">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-light">Trainee Engineer (Intern)</h3>
-                                <p class="text-accent font-semibold">Infobellit (Client: AMD)</p>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/24x24/FFFFFF/000000?text=AMD" alt="AMD Logo" class="logo-icon rounded-full">
+                                <div>
+                                    <h3 class="text-xl font-bold text-light">Trainee Engineer (Intern)</h3>
+                                    <p class="text-accent font-semibold">Infobellit (Client: AMD)</p>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">June 2025 - Present</span>
                         </div>
@@ -395,10 +429,13 @@
                         </ul>
                     </div>
                     <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-right">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-light">Technical Intern</h3>
-                                <p class="text-accent font-semibold">Siemens</p>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/24x24/FFFFFF/000000?text=SIEMENS" alt="Siemens Logo" class="logo-icon rounded-full">
+                                <div>
+                                    <h3 class="text-xl font-bold text-light">Technical Intern</h3>
+                                    <p class="text-accent font-semibold">Siemens</p>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Nov 2024 - May 2025</span>
                         </div>
@@ -411,10 +448,14 @@
                         </ul>
                     </div>
                      <div class="bg-secondary p-6 rounded-lg card-shadow" data-aos="fade-left">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-light">Freelancer</h3>
-                                <p class="text-accent font-semibold">Training LLMs through RLHF, Prompt Evaluation</p>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="briefcase" class="w-6 h-6 text-dark logo-icon"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold text-light">Freelancer</h3>
+                                    <p class="text-accent font-semibold">Training LLMs through RLHF, Prompt Evaluation</p>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Aug 2024 - Present</span>
                         </div>
@@ -433,9 +474,13 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Academic Responsibilities</h2>
                 <div class="max-w-3xl mx-auto space-y-8">
                     <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-left">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-dark">Teaching Assistant | Embedded Systems Design Lab</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="book-open" class="w-6 h-6 text-dark logo-icon"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark">Teaching Assistant | Embedded Systems Design Lab</h3>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">August 2024 - Nov 2024</span>
                         </div>
@@ -446,22 +491,30 @@
                         </ul>
                     </div>
                     <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-right">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-dark">Teaching Assistant | Introduction to Communication Systems</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="book-open" class="w-6 h-6 text-dark logo-icon"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark">Teaching Assistant | Introduction to Communication Systems</h3>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Jan 2024 - April 2024</span>
                         </div>
-                        <ul class="list-disc list-inside mt-4 text-dark/80 space-y-2">
+                        <ul class="list-disc list-inside mt-4 =text-dark/80 space-y-2">
                             <li>Mentored 50+ undergraduate students to help build their skills in <strong>Communication Systems</strong> by guiding them in using <strong>MATLAB</strong>.</li>
                             <li>Assisted in conducting lab sessions and provided support to conduct examinations and helped the academically weaker students by solving their doubts and clearing key concepts related to the subject.</li>
                             <li>Evaluated assignments and conducted simulations of various modulation and demodulation techniques (AM, PM, FM, BPSK, QPSK, etc.) in <strong>MATLAB</strong> prior to lab sessions.</li>
                         </ul>
                     </div>
                     <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-left">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-dark">Robotics Club Co-Ordinator | IIIT, RGUKT, RK Valley</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <!-- Ensured robot icon color is dark for contrast -->
+                                <i data-lucide="robot" class="w-6 h-6 text-dark logo-icon"></i> 
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark">Robotics Club Co-Ordinator | IIIT, RGUKT, RK Valley</h3>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">Jan 2022 - April 2023</span>
                         </div>
@@ -472,9 +525,13 @@
                         </ul>
                     </div>
                     <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-right">
-                        <div class="flex justify-between items-start gap-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-dark">Workshop Organizer | Astronics 4.0 - IIIT, RGUKT, RK Valley</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="clipboard-list" class="w-6 h-6 text-dark logo-icon"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark">Workshop Organizer | Astronics 4.0 - IIIT, RGUKT, RK Valley</h3>
+                                </div>
                             </div>
                             <span class="text-accent font-semibold text-sm text-right whitespace-nowrap">April 2023</span>
                         </div>
@@ -497,7 +554,10 @@
                     <div class="timeline-item" data-aos="fade-right">
                         <div class="bg-white p-6 rounded-lg card-shadow">
                             <p class="text-accent font-semibold mb-1">2023-2025</p>
-                            <h3 class="text-xl font-bold text-dark">MTech., Electrical Engineering</h3>
+                            <div class="flex items-center mb-2">
+                                <img src="https://placehold.co/24x24/FFFFFF/000000?text=IIT" alt="IIT Dharwad Logo" class="logo-icon rounded-full">
+                                <h3 class="text-xl font-bold text-dark">MTech., Electrical Engineering</h3>
+                            </div>
                             <p class="text-dark/80">Indian Institute of Technology Dharwad (IIT DH)</p>
                             <p class="text-dark/70">Communications, Signal Processing and Machine Learning | CGPA: 8.96/10</p>
                         </div>
@@ -506,7 +566,10 @@
                     <div class="timeline-item" data-aos="fade-left">
                         <div class="bg-white p-6 rounded-lg card-shadow">
                             <p class="text-accent font-semibold mb-1">2019-2023</p>
-                            <h3 class="text-xl font-bold text-dark">B.Tech., Electronics and Communication Engineering</h3>
+                            <div class="flex items-center mb-2">
+                                <img src="https://placehold.co/24x24/FFFFFF/000000?text=IIIT" alt="IIIT RGUKT RK Valley Logo" class="logo-icon rounded-full">
+                                <h3 class="text-xl font-bold text-dark">B.Tech., Electronics and Communication Engineering</h3>
+                            </div>
                             <p class="text-dark/80">IIIT RGUKT RK Valley</p>
                             <p class="text-dark/70">CGPA: 8.75/10</p>
                         </div>
@@ -514,8 +577,12 @@
                     <!-- Timeline Item 3 -->
                     <div class="timeline-item" data-aos="fade-right">
                         <div class="bg-white p-6 rounded-lg card-shadow">
-                            <p class="text-accent font-semibold mb-1">2017-2019</p>
-                            <h3 class="text-xl font-bold text-dark">PUC (Pre-University Course)</h3>
+                            <p class="text-accent font-semibold mb-1">2017-2017</p>
+                            <div class="flex items-center mb-2">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="school" class="w-6 h-6 text-dark logo-icon"></i>
+                                <h3 class="text-xl font-bold text-dark">PUC (Pre-University Course)</h3>
+                            </div>
                             <p class="text-dark/80">IIIT RGUKT RK Valley</p>
                             <p class="text-dark/70">CGPA: 8.87/10</p>
                         </div>
@@ -524,7 +591,11 @@
                     <div class="timeline-item" data-aos="fade-left">
                         <div class="bg-white p-6 rounded-lg card-shadow">
                             <p class="text-accent font-semibold mb-1">2016-2017</p>
-                            <h3 class="text-xl font-bold text-dark">SSC (Secondary School Certificate)</h3>
+                            <div class="flex items-center mb-2">
+                                <!-- Changed text-accent to text-dark for better visibility -->
+                                <i data-lucide="school" class="w-6 h-6 text-dark logo-icon"></i>
+                                <h3 class="text-xl font-bold text-dark">SSC (Secondary School Certificate)</h3>
+                            </div>
                             <p class="text-dark/80">AP Model School</p>
                             <p class="text-dark/70">GPA: 10.0/10</p>
                         </div>
@@ -648,6 +719,28 @@
                 </div>
             </div>
         </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 md:py-32">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 flex items-center justify-center">
+                    <i data-lucide="file-text" class="w-8 h-8 text-dark mr-4"></i>
+                    Publications
+                </h2>
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="bg-white p-6 rounded-lg card-shadow" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-dark mb-2">Deep Learning Enabled Segmentation, Classification and Risk Assessment of Cervical Cancer</h3>
+                        <p class="text-dark/80 mb-2">Abdul Samad Shaik, Shashaank Mattur Aswatha, Rahul Jashvantbhai Pandya</p>
+                        <p class="text-dark/70 italic">arXiv preprint arXiv:2505.15505, 2025</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="https://arxiv.org/abs/2505.15505" target="_blank" class="font-semibold text-accent hover:underline flex items-center gap-1">
+                                <i data-lucide="link" class="w-4 h-4"></i> View Publication
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Certifications Section -->
         <section id="certifications" class="py-20 md:py-32">
@@ -659,9 +752,12 @@
                     <div class="flip-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <!-- Replaced img with div containing Lucide icon -->
+                                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                                    <i data-lucide="award" class="w-10 h-10 text-dark"></i> 
+                                </div>
+                                <p class="font-semibold text-light/80 text-lg mb-1">Udemy</p>
                                 <h3 class="text-xl font-bold mb-2">Machine Learning A-Z™: Hands-On Python in Data Science</h3>
-                                <p class="font-semibold text-light/80">Udemy</p>
                                 <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
                             </div>
                             <div class="flip-card-back">
@@ -674,9 +770,12 @@
                     <div class="flip-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <!-- Replaced img with div containing Lucide icon -->
+                                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                                    <i data-lucide="award" class="w-10 h-10 text-dark"></i> 
+                                </div>
+                                <p class="font-semibold text-light/80 text-lg mb-1">Udemy</p>
                                 <h3 class="text-xl font-bold mb-2">Deep Learning A-Z™: Hands-On Artificial Neural Networks</h3>
-                                <p class="font-semibold text-light/80">Udemy</p>
                                 <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
                             </div>
                             <div class="flip-card-back">
@@ -689,9 +788,12 @@
                     <div class="flip-card" data-aos="fade-up" data-aos-delay="300" tabindex="0">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <i data-lucide="award" class="w-16 h-16 mx-auto text-accent mb-4"></i>
+                                <!-- Replaced img with div containing Lucide icon -->
+                                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                                    <i data-lucide="award" class="w-10 h-10 text-dark"></i> 
+                                </div>
+                                <p class="font-semibold text-light/80 text-lg mb-1">Coursera by deeplearning.ai</p>
                                 <h3 class="text-xl font-bold mb-2">Neural Networks and Deep Learning</h3>
-                                <p class="font-semibold text-light/80">Coursera by deeplearning.ai</p>
                                 <p class="text-xs mt-4 text-light/60">Hover or tap to flip</p>
                             </div>
                             <div class="flip-card-back">
@@ -701,6 +803,21 @@
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume-section" class="py-20 md:py-32 bg-primary">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-light mb-12">My Resume</h2>
+                <div class="max-w-3xl mx-auto text-readable-light text-lg mb-8">
+                    <p class="mb-4">For a comprehensive overview of my qualifications, experience, and academic background, please download my full resume.</p>
+                    <p class="mb-6">It includes detailed information on my skills, projects, publications, and professional journey.</p>
+                </div>
+                <a href="assets/pdf/Resume.pdf" download class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    <span>Download Full Resume</span>
+                </a>
             </div>
         </section>
 
@@ -739,6 +856,15 @@
                             <div>
                                 <h3 class="text-lg font-bold text-dark">LinkedIn</h3>
                                 <a href="https://linkedin.com/in/shaikabdulsamad-iit9/" target="_blank" class="text-dark/80 hover:text-accent">linkedin.com/in/shaikabdulsamad-iit9/</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-white rounded-lg card-shadow border" data-aos="fade-right" data-aos-delay="300">
+                            <div class="p-3 rounded-full bg-accent/20 mr-4">
+                                <i data-lucide="codesandbox" class="w-6 h-6 text-accent"></i> <!-- Using 'codesandbox' as a generic code platform icon -->
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-dark">LeetCode</h3>
+                                <a href="https://leetcode.com/u/abdulsamadshaik183/" target="_blank" class="text-dark/80 hover:text-accent">leetcode.com/u/abdulsamadshaik123/</a>
                             </div>
                         </div>
                     </div>
