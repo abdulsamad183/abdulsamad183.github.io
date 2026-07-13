@@ -13,7 +13,6 @@ export function Hero() {
           <div className="mb-6 flex flex-wrap items-center gap-4">
             <StatusPill label="Systems Online" />
             <StatusPill label="Neural Core Active" />
-            <span className="tech-tag border-jarvis-amber/40 bg-jarvis-amber/10 text-jarvis-amber">IITian</span>
             <span className="font-display text-xs tracking-widest text-jarvis-muted uppercase">
               {timeStr} · {profile.location}
             </span>
