@@ -1,0 +1,457 @@
+{
+  "profile": {
+    "name": "Shaik Abdul Samad",
+    "shortName": "Samad",
+    "title": "AIML Engineer @ Infobell IT · IIT Dh",
+    "tagline": "GenAI · RAG · Agentic AI · MCP · Computer Vision",
+    "headline": "An autonomous city built and managed entirely by AI.",
+    "architect": "Architect: Shaik Abdul Samad",
+    "location": "India",
+    "email": "abdulsamadshaik183@gmail.com",
+    "funFacts": ["Dancing", "Calisthenics"],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/shaikabdulsamad-iit9/",
+      "github": "https://github.com/abdulsamad183",
+      "leetcode": "https://leetcode.com/u/abdulsamadshaik183/",
+      "linktree": "https://linktr.ee/shaikabdulsamad",
+      "resumeFolder": "https://drive.google.com/drive/folders/1iVcz9tfB6XJJxPRBTCR8U3dc0UVrgrWS?usp=sharing"
+    },
+    "resumes": [
+      {
+        "id": "genai",
+        "label": "GenAI CV",
+        "url": "https://drive.google.com/drive/folders/1iVcz9tfB6XJJxPRBTCR8U3dc0UVrgrWS?usp=sharing"
+      },
+      {
+        "id": "aiml",
+        "label": "AIML Resume",
+        "url": "https://drive.google.com/drive/folders/1iVcz9tfB6XJJxPRBTCR8U3dc0UVrgrWS?usp=sharing"
+      }
+    ]
+  },
+  "districts": [
+    {
+      "id": "city-core",
+      "name": "Samad City Core",
+      "shortName": "City Core",
+      "type": "hero",
+      "description": "Central hub — welcome to Samad City.",
+      "status": "active",
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "projects",
+      "name": "Projects Tower",
+      "shortName": "Projects",
+      "type": "projects",
+      "description": "All flagship and side projects in one place",
+      "status": "explorable",
+      "position": [-9, 0, -2]
+    },
+    {
+      "id": "publications",
+      "name": "Publications Archive",
+      "shortName": "Publications",
+      "type": "research",
+      "description": "Papers, thesis, and research output",
+      "status": "explorable",
+      "position": [9, 0, -2]
+    },
+    {
+      "id": "experience",
+      "name": "Experience Center",
+      "shortName": "Experience",
+      "type": "experience",
+      "description": "Career milestones and work history",
+      "status": "explorable",
+      "position": [0, 0, -10]
+    },
+    {
+      "id": "education",
+      "name": "Education Campus",
+      "shortName": "Education",
+      "type": "education",
+      "description": "Degrees, certifications, and skills",
+      "status": "explorable",
+      "position": [-9, 0, 6]
+    },
+    {
+      "id": "resume",
+      "name": "Resume Center",
+      "shortName": "Resume",
+      "type": "resume",
+      "description": "Download CVs and professional summary",
+      "status": "explorable",
+      "position": [9, 0, 6]
+    },
+    {
+      "id": "contact",
+      "name": "Contact Hub",
+      "shortName": "Contact",
+      "type": "contact",
+      "description": "Get in touch",
+      "status": "explorable",
+      "position": [0, 0, 12]
+    }
+  ],
+  "careerTimeline": [
+    {
+      "period": "Jun 2025 – Present",
+      "role": "AIML Engineer",
+      "company": "Infobell IT"
+    },
+    {
+      "period": "Nov 2024 – May 2025",
+      "role": "Technical Intern",
+      "company": "Siemens"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer-AIML",
+      "company": "Infobell IT Solutions Pvt Ltd",
+      "period": "Jun 2025 – Present",
+      "location": "Bengaluru, India",
+      "highlights": [],
+      "skills": ["RAG", "Agentic AI", "Voice AI", "FastAPI", "AWS", "LangChain"],
+      "projects": [
+        {
+          "name": "MongoDB RAG",
+          "highlights": [
+            "Engineered an agentic Retrieval-Augmented Generation (RAG) system to automate domain knowledge extraction across 10,000+ documents, evidenced by a 35% reduction in LLM hallucinations, by orchestrating LangChain, local models (vLLM/Ollama), and dynamic prompt synthesis.",
+            "Optimized system latency and retrieval relevance for complex queries, achieving a 92% Top-K retrieval precision and reducing p95 query latency to <800ms, by implementing a hybrid search architecture (Full-text + Vector Fusion) with cross-encoder reranking using MongoDB Atlas and Sentence Transformers.",
+            "Accelerated the document embedding workflow to handle large-scale data ingestion, demonstrated by processing over 50,000 records per hour without downtime, by designing an automated batch indexing pipeline in Python that detects and processes missing vectors.",
+            "Delivered a responsive GenAI user interface for real-time system interaction, reducing manual database management time by 15 hours/week, by deploying a Streamlit application integrated directly with the MongoDB backend to manage search parameters and collection metadata."
+          ]
+        },
+        {
+          "name": "Vivah.ai — Voice based Matrimonial Application",
+          "highlights": [
+            "Engineered an agentic voice bot for dynamic user onboarding, achieving sub-second conversational latency, by integrating Gemini Live and OpenAI LLMs using the pipecat-ai framework within an asynchronous FastAPI backend.",
+            "Implemented real-time GenAI audio streaming with bidirectional WebSockets, asyncio, and thread pools to support scalable concurrent user sessions.",
+            "Built a scalable AI deployment pipeline using Docker, AWS ECS (Fargate), and API Gateway for auto-scaling and high availability.",
+            "Built an LLM function-calling pipeline to extract structured data from conversations, enforcing Pydantic schemas and storing results in PostgreSQL."
+          ]
+        },
+        {
+          "name": "Mediflow — Voice controlled Dashboard",
+          "highlights": [
+            "Deployed an agentic, multimodal voice assistant, achieving ultra-low latency for real-time user interactions, by orchestrating Large Language Models (LLMs) via Google GenAI, Silero VAD, and the Pipecat framework.",
+            "Developed a FastAPI/Python decision-support microservice processing 50+ data profiles, containerized with Docker for scalable deployment.",
+            "Automated OCR-based dashboard data extraction using OpenCV and React, eliminating manual data entry and reducing ingestion latency.",
+            "Architected an event-sourced FSM backend with PostgreSQL and SQLAlchemy, ensuring consistent state management across agentic workflows."
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Technical Intern",
+      "company": "Siemens Technology and Services Pvt Ltd",
+      "period": "Nov 2024 – May 2025",
+      "location": "Bengaluru, India",
+      "highlights": [
+        "Built a scalable federated learning framework, as considered by successful cross-device model training with zero raw data exchange, by leveraging PyTorch and the Industrial Edge (IIH) SDK to support privacy-preserving distributed learning.",
+        "Optimized ML data and training pipelines, as quantified by a ~25% improvement in distributed training throughput, by implementing parallel processing and automated preprocessing workflows for computer vision and time-series applications.",
+        "Enhanced global model performance, as assessed by ~20% accuracy gains across object detection and time-series foundation model tasks, by designing advanced aggregation strategies and applying parameter-efficient fine-tuning (LoRA/QLoRA) under strict resource constraints through feature refinement techniques.",
+        "Containerized training workflows using Docker for reproducible deployment across heterogeneous CPU/GPU hardware on Siemens Industrial Edge platform."
+      ],
+      "skills": ["Federated Learning", "PyTorch", "Docker", "Computer Vision", "LoRA/QLoRA"]
+    },
+    {
+      "role": "Freelancer",
+      "company": "RLHF & Prompt Evaluation",
+      "period": "Aug 2024 – Present",
+      "location": "Remote",
+      "highlights": [
+        "Training LLMs through RLHF",
+        "Prompt evaluation and optimization"
+      ],
+      "skills": ["RLHF", "LLM", "Prompt Engineering"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Tech, Communications, Signal Processing & Machine Learning",
+      "institution": "Indian Institute of Technology Dharwad",
+      "period": "2023 – 2025",
+      "cgpa": "8.96/10"
+    },
+    {
+      "degree": "B.Tech, Electronics and Communication Engineering",
+      "institution": "IIIT RGUKT RK Valley",
+      "period": "2019 – 2023",
+      "cgpa": "8.75/10"
+    }
+  ],
+  "flagshipProjects": [
+    {
+      "id": "gitsight",
+      "name": "GitSight",
+      "building": "GitSight HQ",
+      "description": "Autonomous Software Engineering Platform for repository analysis, code intelligence, and AI-powered insights.",
+      "tech": ["Next.js", "FastAPI", "PostgreSQL", "pgvector", "Tree-sitter", "Groq", "RAG"],
+      "links": {
+        "github": "https://github.com/abdulsamad183/GitSight-autonomous-se-platform",
+        "demo": "https://git-sight-autonomous-se-platform.vercel.app/"
+      },
+      "features": [
+        "Repository Graph",
+        "AI Code Indexer",
+        "RAG Pipeline",
+        "Agent Workflow",
+        "PR Review"
+      ]
+    },
+    {
+      "id": "yesbroker",
+      "name": "YesBroker",
+      "building": "YesBroker Tower",
+      "description": "AI-powered rental trust verification — five specialist agents detect scams before you book.",
+      "tech": ["FastAPI", "Next.js", "Gemini", "Playwright", "Multi-Agent"],
+      "links": {
+        "github": "https://github.com/PSY27/YesBroker"
+      },
+      "features": [
+        "Scam Detection AI",
+        "Risk Assessment",
+        "Multi-Agent System",
+        "Case Studies"
+      ]
+    },
+    {
+      "id": "thesis",
+      "name": "Cervical Cancer Detection",
+      "building": "Nexus Lab",
+      "description": "Master's thesis — MRF-DCN architecture achieving ~96% accuracy with novel DL pipeline.",
+      "tech": ["PyTorch", "TensorFlow", "Medical Imaging", "Deep Learning"],
+      "links": {
+        "publication": "https://arxiv.org/abs/2505.15505"
+      },
+      "features": [
+        "Segmentation & Classification",
+        "MRF-DCN Architecture",
+        "Risk Assessment Pipeline"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "C", "MATLAB", "TypeScript"],
+    "mlDl": ["PyTorch", "TensorFlow", "Keras", "scikit-learn", "Federated Learning"],
+    "genAi": ["LLM Finetuning", "RAG", "LangChain", "LangGraph", "HuggingFace", "MCP", "Agentic AI"],
+    "systems": ["FastAPI", "Docker", "PostgreSQL", "Supabase", "Git", "Streamlit", "Flask"],
+    "cloud": ["AWS", "GCP", "Render", "Vercel"],
+    "domains": ["Computer Vision", "NLP", "Signal Processing", "Medical Imaging"]
+  },
+  "skillTree": [
+    { "id": "python", "label": "Python", "category": "languages", "connections": ["pytorch", "fastapi", "langchain"], "projects": ["GitSight", "YesBroker", "cooking_agent"] },
+    { "id": "pytorch", "label": "PyTorch", "category": "mlDl", "connections": ["deep-learning", "federated-learning"], "projects": ["MRF-DCN Thesis", "Siemens FL"] },
+    { "id": "deep-learning", "label": "Deep Learning", "category": "mlDl", "connections": ["computer-vision", "nlp"], "projects": ["Cervical Cancer Detection", "DistilBERT"] },
+    { "id": "federated-learning", "label": "Federated Learning", "category": "mlDl", "connections": ["pytorch"], "projects": ["Siemens Internship"] },
+    { "id": "langchain", "label": "LangChain", "category": "genAi", "connections": ["rag", "langgraph"], "projects": ["file_management"] },
+    { "id": "langgraph", "label": "LangGraph", "category": "genAi", "connections": ["agentic-ai"], "projects": ["file_management", "YesBroker"] },
+    { "id": "rag", "label": "RAG", "category": "genAi", "connections": ["agentic-ai"], "projects": ["GitSight", "retrieval_ranking_system"] },
+    { "id": "agentic-ai", "label": "Agentic AI", "category": "genAi", "connections": ["mcp"], "projects": ["GitSight", "YesBroker", "cooking_agent"] },
+    { "id": "mcp", "label": "MCP", "category": "genAi", "connections": [], "projects": ["ai-engineering-playbook"] },
+    { "id": "fastapi", "label": "FastAPI", "category": "systems", "connections": ["docker"], "projects": ["GitSight", "YesBroker"] },
+    { "id": "docker", "label": "Docker", "category": "systems", "connections": [], "projects": ["Siemens Internship"] },
+    { "id": "computer-vision", "label": "Computer Vision", "category": "domains", "connections": [], "projects": ["Thesis", "Fatigue System"] },
+    { "id": "nlp", "label": "NLP", "category": "domains", "connections": [], "projects": ["DistilBERT", "transformer-guide"] }
+  ],
+  "universityDoors": [
+    {
+      "id": "iit-hall",
+      "label": "IIT Hall",
+      "description": "Graduate studies at IIT Dharwad",
+      "items": ["M.Tech CSPML · 2023–2025", "CGPA 8.96/10", "MRF-DCN thesis · Medical AI"]
+    },
+    {
+      "id": "engineering-wing",
+      "label": "Engineering Wing",
+      "description": "Undergraduate foundation",
+      "items": ["B.Tech ECE · IIIT RGUKT", "2019–2023 · CGPA 8.75", "PUC MPC · 8.87 CGPA"]
+    },
+    {
+      "id": "llm-hall",
+      "label": "LLM Hall",
+      "description": "Large language model expertise",
+      "items": ["DistilBERT implementation", "RLHF freelancing", "transformer-guide"]
+    },
+    {
+      "id": "rag-library",
+      "label": "RAG Library",
+      "description": "Retrieval-augmented generation systems",
+      "items": ["GitSight RAG pipeline", "retrieval_ranking_system", "all-rag-techniques"]
+    },
+    {
+      "id": "agent-academy",
+      "label": "Agent Academy",
+      "description": "Multi-agent architectures",
+      "items": ["YesBroker · 5 agents", "file_management · LangGraph", "17+ agentic patterns"]
+    },
+    {
+      "id": "mcp-lab",
+      "label": "MCP Lab",
+      "description": "Model Context Protocol & tooling",
+      "items": ["ai-engineering-playbook", "MCP integration patterns"]
+    },
+    {
+      "id": "cert-vault",
+      "label": "Certification Vault",
+      "description": "Verified credentials",
+      "items": ["Deep Learning A-Z · Udemy", "ML A-Z · Udemy", "Neural Networks · Coursera"]
+    }
+  ],
+  "academicRoles": [
+    {
+      "title": "Teaching Assistant · Embedded Systems Design Lab",
+      "period": "Aug 2024 – Nov 2024",
+      "highlights": ["Mentored 50+ students on Tiva TM4C123GH6PM", "Evaluated lab assignments"]
+    },
+    {
+      "title": "Teaching Assistant · Communication Systems",
+      "period": "Jan 2024 – Apr 2024",
+      "highlights": ["Guided 50+ students in MATLAB simulations", "AM/FM/BPSK/QPSK modulation labs"]
+    },
+    {
+      "title": "Robotics Club Coordinator · IIIT RGUKT",
+      "period": "Jan 2022 – Apr 2023",
+      "highlights": ["Led Arduino, NodeMCU, ML workshops", "Mentored junior project teams"]
+    },
+    {
+      "title": "Workshop Organizer · Astronics 4.0",
+      "period": "Apr 2023",
+      "highlights": ["Organized full workshop", "Hands-on programming sessions"]
+    }
+  ],
+  "timeline": [
+    { "year": "2017", "event": "PUC @ RGUKT RK Valley" },
+    { "year": "2019", "event": "B.Tech ECE @ IIIT RGUKT" },
+    { "year": "2022", "event": "Robotics Club Lead" },
+    { "year": "2023", "event": "M.Tech @ IIT Dharwad" },
+    { "year": "2024", "event": "Siemens Intern + RLHF" },
+    { "year": "2025", "event": "Infobell · GitSight" },
+    { "year": "2026", "event": "YesBroker · AI Playbook" },
+    { "year": "Future", "event": "AI Architect & Innovator" }
+  ],
+  "publications": [
+    {
+      "title": "A Comparative Study of Deep Learning Architectures for Cervical Cell Segmentation in Pap Smear Images",
+      "authors": "Revanth Palaparthi, Sahitya Chinta, Shaik Abdul Samad, Rahul J. Pandya",
+      "venue": "2025 9th International Conference on Information Technology (InCIT), IEEE Xplore, Nov 2025",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11276101"
+    },
+    {
+      "title": "Deep Learning Enabled Segmentation, Classification and Risk Assessment of Cervical Cancer",
+      "authors": "Abdul Samad Shaik, Shashaank Mattur Aswatha, Rahul Jashvantbhai Pandya",
+      "venue": "arXiv preprint arXiv:2505.15505, 2025",
+      "url": "https://arxiv.org/abs/2505.15505"
+    }
+  ],
+  "certifications": [
+    { "name": "Deep Learning A-Z™", "issuer": "Udemy", "year": "2020" },
+    { "name": "Machine Learning A-Z™", "issuer": "Udemy", "year": "2020" },
+    { "name": "Neural Networks and Deep Learning", "issuer": "Coursera / deeplearning.ai", "year": "2020" }
+  ],
+  "labStations": [
+    { "id": "ai-playground", "label": "AI Playground", "description": "Multimodal agents and creative AI experiments" },
+    { "id": "side-projects", "label": "Side Projects", "description": "Agent tools and automation systems" },
+    { "id": "experiments", "label": "Experiments", "description": "From-scratch ML implementations and studies" },
+    { "id": "demo-zone", "label": "Demo Zone", "description": "Live demos and interactive guides" }
+  ],
+  "sideProjects": [
+    {
+      "id": "cooking-agent",
+      "name": "Cooking Agent",
+      "description": "Multimodal AI that reads ingredient images and suggests recipes — recommends missing items when needed.",
+      "tech": ["Python", "OpenAI", "Streamlit", "Multimodal"],
+      "links": { "github": "https://github.com/abdulsamad183/cooking_agent" },
+      "station": "ai-playground"
+    },
+    {
+      "id": "file-management",
+      "name": "AI File Management",
+      "description": "LangGraph agent that creates, edits, and organizes files via natural language in a sandboxed workspace.",
+      "tech": ["Python", "LangGraph", "Agentic AI"],
+      "links": { "github": "https://github.com/abdulsamad183/file_management" },
+      "station": "side-projects"
+    },
+    {
+      "id": "retrieval-ranking",
+      "name": "RAG QA System",
+      "description": "From-scratch evaluated RAG without managed vector DBs — focuses on retrieval quality and latency trade-offs.",
+      "tech": ["Python", "RAG", "Ranking"],
+      "links": { "github": "https://github.com/abdulsamad183/retrieval_ranking_system_for_qa" },
+      "station": "side-projects"
+    },
+    {
+      "id": "transformer-guide",
+      "name": "Transformer Guide",
+      "description": "Visual, self-contained guide to Transformer architecture with tensor shapes at every step.",
+      "tech": ["JavaScript", "NLP", "Transformers"],
+      "links": {
+        "github": "https://github.com/abdulsamad183/transformer-guide",
+        "demo": "https://abdulsamad183.github.io/transformer-guide/"
+      },
+      "station": "demo-zone"
+    },
+    {
+      "id": "ai-playbook",
+      "name": "AI Engineering Playbook",
+      "description": "Practical knowledge base for LLMs, RAG, Agents, MCP, and production AI system design.",
+      "tech": ["Python", "LLM", "RAG", "MCP"],
+      "links": { "github": "https://github.com/abdulsamad183/ai-engineering-playbook" },
+      "station": "demo-zone"
+    },
+    {
+      "id": "agentic-architectures",
+      "name": "Agentic Architectures",
+      "description": "Implementation of 17+ agentic architectures for practical AI system development.",
+      "tech": ["Python", "LangGraph", "Agents"],
+      "links": { "github": "https://github.com/abdulsamad183/all-agentic-architectures" },
+      "station": "ai-playground"
+    },
+    {
+      "id": "nn-from-scratch",
+      "name": "Neural Network from Scratch",
+      "description": "4-layer NN with custom activations and backprop — compared against TensorFlow implementation.",
+      "tech": ["Python", "NumPy", "TensorFlow"],
+      "links": { "github": "https://github.com/abdulsamad183/nn_from_scratch" },
+      "station": "experiments"
+    },
+    {
+      "id": "mnist-study",
+      "name": "MNIST Architecture Study",
+      "description": "8 feed-forward architectures on MNIST with activation function comparisons.",
+      "tech": ["Jupyter", "Deep Learning", "MNIST"],
+      "links": { "github": "https://github.com/abdulsamad183/comparative_study_of_feed_forward_neural_networks" },
+      "station": "experiments"
+    },
+    {
+      "id": "distilbert",
+      "name": "DistilBERT Implementation",
+      "description": "Replicated DistilBERT paper — trained on RTE and Rhetorical Role Prediction datasets.",
+      "tech": ["PyTorch", "NLP", "BERT"],
+      "links": { "github": "https://github.com/abdulsamad183" },
+      "station": "experiments"
+    },
+    {
+      "id": "fatigue-system",
+      "name": "Smart Fatigue Relief System",
+      "description": "Bachelor thesis — YOLOv3 fatigue detection with Arduino-controlled relief system.",
+      "tech": ["YOLOv3", "Arduino", "IoT", "Computer Vision"],
+      "links": { "github": "https://github.com/abdulsamad183" },
+      "station": "ai-playground"
+    }
+  ],
+  "bootSequence": {
+    "version": "SAMAD OS v2.0",
+    "lines": [
+      "Initializing neural core...",
+      "Loading city districts...",
+      "Establishing visitor link...",
+      "Samad City online."
+    ],
+    "welcome": "Welcome to Samad City.",
+    "subtitle": "An autonomous metropolis built and managed entirely by AI."
+  }
+}
