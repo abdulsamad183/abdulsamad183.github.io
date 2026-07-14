@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { profile } from '../../data'
 
 const NAV = [
   { id: 'about', label: 'About' },
@@ -9,6 +10,8 @@ const NAV = [
   { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
 ]
+
+const HIRE_MAILTO = `mailto:${profile.email}?subject=${encodeURIComponent('Opportunity — GenAI / Agentic AI')}`
 
 export function Navbar() {
   const [active, setActive] = useState('about')
@@ -59,7 +62,7 @@ export function Navbar() {
         </nav>
 
         <a
-          href="#contact"
+          href={HIRE_MAILTO}
           className="font-display border border-jarvis-cyan/40 px-3 py-1.5 text-[0.65rem] tracking-[0.15em] text-jarvis-cyan uppercase transition hover:bg-jarvis-cyan/10"
         >
           Hire Me

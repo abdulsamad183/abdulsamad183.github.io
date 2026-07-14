@@ -4,8 +4,8 @@
     "shortName": "Samad",
     "title": "AIML Engineer @ Infobell IT · IIT Dh",
     "tagline": "GenAI · RAG · Agentic AI · MCP · Computer Vision",
-    "headline": "An autonomous city built and managed entirely by AI.",
-    "architect": "Architect: Shaik Abdul Samad",
+    "headline": "JARVIS-inspired portfolio of a production GenAI engineer.",
+    "architect": "Shaik Abdul Samad",
     "location": "Bangalore, India",
     "email": "abdulsamadshaik183@gmail.com",
     "funFacts": ["Dancing", "Calisthenics"],
@@ -187,51 +187,119 @@
     {
       "id": "gitsight",
       "name": "GitSight",
-      "building": "GitSight HQ",
-      "description": "Autonomous Software Engineering Platform for repository analysis, code intelligence, and AI-powered insights.",
-      "tech": ["Next.js", "FastAPI", "PostgreSQL", "pgvector", "Tree-sitter", "Groq", "RAG"],
+      "building": "Flagship · Full-stack",
+      "description": "Built a full-stack GitHub code intelligence platform with Agentic AI workflows, RAG-powered repository chat, semantic search, dependency graph visualization, and AI PR reviews using FastAPI, Next.js/React, TypeScript, and Supabase PostgreSQL with a CI/CD pipeline.",
+      "tech": ["Next.js", "FastAPI", "TypeScript", "Supabase", "pgvector", "Tree-sitter", "Groq", "RAG"],
       "links": {
         "github": "https://github.com/abdulsamad183/GitSight-autonomous-se-platform",
         "demo": "https://git-sight-autonomous-se-platform.vercel.app/"
       },
       "features": [
-        "Repository Graph",
-        "AI Code Indexer",
-        "RAG Pipeline",
-        "Agent Workflow",
-        "PR Review"
+        "Developed an automated repository indexing pipeline using GitPython, Tree-sitter, pgvector, and Gemini embeddings to enable keyword, semantic, and hybrid code search.",
+        "Implemented repository-aware RAG chat, async indexing jobs, GitHub PR sync, React Flow visualizations, Groq LLM integration with fallback handling, and Dockerized deployment."
       ]
     },
     {
       "id": "yesbroker",
       "name": "YesBroker",
-      "building": "YesBroker Tower",
-      "description": "AI-powered rental trust verification — five specialist agents detect scams before you book.",
-      "tech": ["FastAPI", "Next.js", "Gemini", "Playwright", "Multi-Agent"],
+      "building": "Flagship · Multi-agent",
+      "description": "Built a Bangalore rental verification system that scores listings with 5 Gemini agents (Photo Forensics, Price Sanity, Commute Truth, Text Tells, Web Recon), covering a 115-listing dataset (100 legit + 12 scam cases) via FastAPI orchestration with planner → parallel agents → reflection.",
+      "tech": ["FastAPI", "Next.js", "Gemini", "Playwright", "SSE", "Leaflet"],
       "links": {
         "github": "https://github.com/PSY27/YesBroker"
       },
       "features": [
-        "Scam Detection AI",
-        "Risk Assessment",
-        "Multi-Agent System",
-        "Case Studies"
+        "Cut repeat analysis latency to near-instant detail views by caching trust reports during search over the top 10 matches (up to 3 concurrent investigations), streaming agent traces over SSE to a Next.js dashboard.",
+        "Added Playwright live scraping, photo forensics UI, commute map (Leaflet), and shareable report links/QR so users only trigger full Gemini analysis on Find Safe Homes, then open any listing’s cached report without re-running all 5 agents."
       ]
     },
     {
       "id": "thesis",
-      "name": "Cervical Cancer Detection",
-      "building": "Nexus Lab",
-      "description": "Master's thesis — MRF-DCN architecture achieving ~96% accuracy with novel DL pipeline.",
+      "name": "Cervical Cancer Detection using Deep Learning",
+      "building": "M.Tech Thesis · IIT Dharwad",
+      "description": "Early Pap-smear screening research focused on segmenting cellular boundaries and isolating cancer cells with bounding boxes on the SIPaKMeD dataset.",
       "tech": ["PyTorch", "TensorFlow", "Medical Imaging", "Deep Learning"],
       "links": {
         "publication": "https://arxiv.org/abs/2505.15505"
       },
       "features": [
-        "Segmentation & Classification",
-        "MRF-DCN Architecture",
-        "Risk Assessment Pipeline"
+        "Proposed Multi-Resolution Fusion Deep Convolutional Network (MRF-DCN) for varying resolutions/aspect ratios — within 2–3% of SOTA accuracy using only 1.7M parameters (~85× fewer than VGG-19).",
+        "Multi-task learning for simultaneous segmentation and classification: IoU 0.83 and 90% classification accuracy.",
+        "Probabilistic risk assessment stage extracts feature vectors to estimate progression from normal to malignant cells for cervical cancer prognosis."
       ]
+    },
+    {
+      "id": "fatigue-system",
+      "name": "Smart Fatigue Relief System",
+      "building": "B.Tech Thesis · IIIT RGUKT",
+      "description": "Bachelor thesis — YOLOv3 fatigue detection with Arduino-controlled relief system for driver safety.",
+      "tech": ["YOLOv3", "Arduino", "IoT", "Computer Vision"],
+      "links": {
+        "github": "https://github.com/abdulsamad183/smart_fatigue_relieve_system"
+      },
+      "features": [
+        "Real-time Fatigue Detection",
+        "YOLOv3 Vision Pipeline",
+        "Arduino Relief Actuation"
+      ]
+    }
+  ],
+  "otherGithubProjects": [
+    {
+      "name": "AI Engineering Playbook",
+      "url": "https://github.com/abdulsamad183/ai-engineering-playbook"
+    },
+    {
+      "name": "Transformer Guide",
+      "url": "https://github.com/abdulsamad183/transformer-guide"
+    },
+    {
+      "name": "Cooking Agent",
+      "url": "https://github.com/abdulsamad183/cooking_agent"
+    },
+    {
+      "name": "AI File Management",
+      "url": "https://github.com/abdulsamad183/file_management"
+    },
+    {
+      "name": "RAG QA System",
+      "url": "https://github.com/abdulsamad183/retrieval_ranking_system_for_qa"
+    },
+    {
+      "name": "NN from Scratch",
+      "url": "https://github.com/abdulsamad183/nn_from_scratch"
+    },
+    {
+      "name": "MNIST Architecture Study",
+      "url": "https://github.com/abdulsamad183/comparative_study_of_feed_forward_neural_networks"
+    },
+    {
+      "name": "EM for GMM from Scratch",
+      "url": "https://github.com/abdulsamad183/EM_for_GMM_from_scratch"
+    },
+    {
+      "name": "Familiar with CNNs",
+      "url": "https://github.com/abdulsamad183/Familiar-with-CNNs"
+    },
+    {
+      "name": "Bitcoin Prediction RNNs",
+      "url": "https://github.com/abdulsamad183/bitcoin_prediction_using_rnns"
+    },
+    {
+      "name": "Gradient Descent Viz",
+      "url": "https://github.com/abdulsamad183/visualization_of_gradient_descent"
+    },
+    {
+      "name": "Exam Automation",
+      "url": "https://github.com/abdulsamad183/exam_automation"
+    },
+    {
+      "name": "Personal QR Code",
+      "url": "https://github.com/abdulsamad183/create_personal_qr_code"
+    },
+    {
+      "name": "Impress Partner",
+      "url": "https://github.com/abdulsamad183/impress_partner"
     }
   ],
   "skills": {
@@ -352,106 +420,17 @@
     { "name": "Machine Learning A-Z™", "issuer": "Udemy", "year": "2020" },
     { "name": "Neural Networks and Deep Learning", "issuer": "Coursera / deeplearning.ai", "year": "2020" }
   ],
-  "labStations": [
-    { "id": "ai-playground", "label": "AI Playground", "description": "Multimodal agents and creative AI experiments" },
-    { "id": "side-projects", "label": "Side Projects", "description": "Agent tools and automation systems" },
-    { "id": "experiments", "label": "Experiments", "description": "From-scratch ML implementations and studies" },
-    { "id": "demo-zone", "label": "Demo Zone", "description": "Live demos and interactive guides" }
-  ],
-  "sideProjects": [
-    {
-      "id": "cooking-agent",
-      "name": "Cooking Agent",
-      "description": "Multimodal AI that reads ingredient images and suggests recipes — recommends missing items when needed.",
-      "tech": ["Python", "OpenAI", "Streamlit", "Multimodal"],
-      "links": { "github": "https://github.com/abdulsamad183/cooking_agent" },
-      "station": "ai-playground"
-    },
-    {
-      "id": "file-management",
-      "name": "AI File Management",
-      "description": "LangGraph agent that creates, edits, and organizes files via natural language in a sandboxed workspace.",
-      "tech": ["Python", "LangGraph", "Agentic AI"],
-      "links": { "github": "https://github.com/abdulsamad183/file_management" },
-      "station": "side-projects"
-    },
-    {
-      "id": "retrieval-ranking",
-      "name": "RAG QA System",
-      "description": "From-scratch evaluated RAG without managed vector DBs — focuses on retrieval quality and latency trade-offs.",
-      "tech": ["Python", "RAG", "Ranking"],
-      "links": { "github": "https://github.com/abdulsamad183/retrieval_ranking_system_for_qa" },
-      "station": "side-projects"
-    },
-    {
-      "id": "transformer-guide",
-      "name": "Transformer Guide",
-      "description": "Visual, self-contained guide to Transformer architecture with tensor shapes at every step.",
-      "tech": ["JavaScript", "NLP", "Transformers"],
-      "links": {
-        "github": "https://github.com/abdulsamad183/transformer-guide",
-        "demo": "https://abdulsamad183.github.io/transformer-guide/"
-      },
-      "station": "demo-zone"
-    },
-    {
-      "id": "ai-playbook",
-      "name": "AI Engineering Playbook",
-      "description": "Practical knowledge base for LLMs, RAG, Agents, MCP, and production AI system design.",
-      "tech": ["Python", "LLM", "RAG", "MCP"],
-      "links": { "github": "https://github.com/abdulsamad183/ai-engineering-playbook" },
-      "station": "demo-zone"
-    },
-    {
-      "id": "agentic-architectures",
-      "name": "Agentic Architectures",
-      "description": "Implementation of 17+ agentic architectures for practical AI system development.",
-      "tech": ["Python", "LangGraph", "Agents"],
-      "links": { "github": "https://github.com/abdulsamad183/all-agentic-architectures" },
-      "station": "ai-playground"
-    },
-    {
-      "id": "nn-from-scratch",
-      "name": "Neural Network from Scratch",
-      "description": "4-layer NN with custom activations and backprop — compared against TensorFlow implementation.",
-      "tech": ["Python", "NumPy", "TensorFlow"],
-      "links": { "github": "https://github.com/abdulsamad183/nn_from_scratch" },
-      "station": "experiments"
-    },
-    {
-      "id": "mnist-study",
-      "name": "MNIST Architecture Study",
-      "description": "8 feed-forward architectures on MNIST with activation function comparisons.",
-      "tech": ["Jupyter", "Deep Learning", "MNIST"],
-      "links": { "github": "https://github.com/abdulsamad183/comparative_study_of_feed_forward_neural_networks" },
-      "station": "experiments"
-    },
-    {
-      "id": "distilbert",
-      "name": "DistilBERT Implementation",
-      "description": "Replicated DistilBERT paper — trained on RTE and Rhetorical Role Prediction datasets.",
-      "tech": ["PyTorch", "NLP", "BERT"],
-      "links": { "github": "https://github.com/abdulsamad183" },
-      "station": "experiments"
-    },
-    {
-      "id": "fatigue-system",
-      "name": "Smart Fatigue Relief System",
-      "description": "Bachelor thesis — YOLOv3 fatigue detection with Arduino-controlled relief system.",
-      "tech": ["YOLOv3", "Arduino", "IoT", "Computer Vision"],
-      "links": { "github": "https://github.com/abdulsamad183" },
-      "station": "ai-playground"
-    }
-  ],
+  "labStations": [],
+  "sideProjects": [],
   "bootSequence": {
-    "version": "SAMAD OS v2.0",
+    "version": "JARVIS Portfolio v1.0",
     "lines": [
       "Initializing neural core...",
-      "Loading city districts...",
+      "Loading skill matrix...",
       "Establishing visitor link...",
-      "Samad City online."
+      "Portfolio interface online."
     ],
-    "welcome": "Welcome to Samad City.",
-    "subtitle": "An autonomous metropolis built and managed entirely by AI."
+    "welcome": "Welcome.",
+    "subtitle": "JARVIS-inspired portfolio of a production GenAI engineer."
   }
 }

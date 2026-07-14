@@ -1,6 +1,8 @@
 import { profile } from '../../data'
 import { SectionHeader, HudCard, HudButton } from './ui'
 
+const HIRE_MAILTO = `mailto:${profile.email}?subject=${encodeURIComponent('Opportunity — GenAI / Agentic AI')}`
+
 export function ContactSection() {
   return (
     <section className="px-5 py-20">
@@ -9,8 +11,23 @@ export function ContactSection() {
           id="contact"
           label="Module 07"
           title="Transmission Hub"
-          subtitle="Open a secure channel. JARVIS will route your message."
+          subtitle="Open to GenAI / Agentic AI roles · Bangalore. One click opens a secure channel."
         />
+
+        <div className="mb-8 flex flex-wrap items-center gap-4">
+          <HudButton href={HIRE_MAILTO}>Email me</HudButton>
+          <p className="text-sm text-jarvis-muted">
+            Prefer LinkedIn? Reach out at{' '}
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-jarvis-cyan hover:text-white"
+            >
+              shaikabdulsamad-iit9
+            </a>
+          </p>
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <HudCard accent="magenta">
@@ -19,7 +36,7 @@ export function ContactSection() {
               <div>
                 <p className="text-xs tracking-wider text-jarvis-muted uppercase">Email</p>
                 <a
-                  href={`mailto:${profile.email}`}
+                  href={HIRE_MAILTO}
                   className="mt-1 block text-lg text-jarvis-cyan transition hover:text-white"
                 >
                   {profile.email}
@@ -28,6 +45,10 @@ export function ContactSection() {
               <div>
                 <p className="text-xs tracking-wider text-jarvis-muted uppercase">Location</p>
                 <p className="mt-1 text-lg text-jarvis-text">{profile.location}</p>
+              </div>
+              <div>
+                <p className="text-xs tracking-wider text-jarvis-muted uppercase">Availability</p>
+                <p className="mt-1 text-lg text-jarvis-green">Open to GenAI / Agentic AI roles</p>
               </div>
               <div>
                 <p className="text-xs tracking-wider text-jarvis-muted uppercase">Resumes</p>

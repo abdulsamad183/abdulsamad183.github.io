@@ -324,3 +324,17 @@ body,
 .timeline-line {
   background: linear-gradient(180deg, var(--color-jarvis-cyan), var(--color-jarvis-purple), transparent);
 }
+
+.avatar-ring {
+  padding: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.7), rgba(176, 38, 255, 0.45), rgba(0, 229, 255, 0.3));
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 255, 0.25),
+    0 0 32px rgba(0, 229, 255, 0.2);
+}
+
+.avatar-ring img {
+  border: 3px solid #030508;
+  display: block;
+}
