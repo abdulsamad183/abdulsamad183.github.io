@@ -2,9 +2,9 @@
   "profile": {
     "name": "Shaik Abdul Samad",
     "shortName": "Samad",
-    "title": "AIML Engineer @ Infobell IT · IIT Dh",
-    "tagline": "GenAI · RAG · Agentic AI · MCP · Computer Vision",
-    "headline": "JARVIS-inspired portfolio of a production GenAI engineer.",
+    "title": "AI Engineer @ Infobell IT · IIT Dharwad",
+    "tagline": "Agentic RAG · Multi-Agent Systems · Voice AI · Applied ML",
+    "headline": "Production AI engineering, from retrieval quality to deployment.",
     "architect": "Shaik Abdul Samad",
     "location": "Bangalore, India",
     "email": "abdulsamadshaik183@gmail.com",
@@ -174,13 +174,13 @@
       "degree": "M.Tech, Communications, Signal Processing & Machine Learning",
       "institution": "Indian Institute of Technology Dharwad",
       "period": "2023 – 2025",
-      "cgpa": "8.96/10"
+      "cgpa": "8.9/10"
     },
     {
       "degree": "B.Tech, Electronics and Communication Engineering",
       "institution": "IIIT RGUKT RK Valley",
       "period": "2019 – 2023",
-      "cgpa": "8.75/10"
+      "cgpa": "8.7/10"
     }
   ],
   "flagshipProjects": [
@@ -411,14 +411,12 @@
     {
       "title": "Deep Learning Enabled Segmentation, Classification and Risk Assessment of Cervical Cancer",
       "authors": "Abdul Samad Shaik, Shashaank Mattur Aswatha, Rahul Jashvantbhai Pandya",
-      "venue": "arXiv preprint arXiv:2505.15505, 2025",
+      "venue": "Signal, Image and Video Processing (Springer), under revision, 2026 · Previously arXiv:2505.15505",
       "url": "https://arxiv.org/abs/2505.15505"
     }
   ],
   "certifications": [
-    { "name": "Deep Learning A-Z™", "issuer": "Udemy", "year": "2020" },
-    { "name": "Machine Learning A-Z™", "issuer": "Udemy", "year": "2020" },
-    { "name": "Neural Networks and Deep Learning", "issuer": "Coursera / deeplearning.ai", "year": "2020" }
+    { "name": "Claude Certified Developer - Foundations", "issuer": "Anthropic", "year": "2026" }
   ],
   "labStations": [],
   "sideProjects": [],
